@@ -48,14 +48,14 @@ def check_doh(target):
 			# check GET
 			get_url = f"{doh_url}?dns={query_data.hex()}"
 			get_response = requests.get(get_url, headers=headers, timeout=5, verify=True)
-			print(get_response.text)
+			#print(get_response.text)
 			if get_response.status_code == 200:
 				print(f"[+] {target} ({ip}) accepts DoH queries via GET at {doh_url}")
 				return True
 
 			# check POST
 			post_response = requests.post(doh_url, headers=headers, data=query_data, timeout=5, verify=True)
-			print(post_response.text)
+			#print(post_response.text)
 			if post_response.status_code == 200:
 				print(f"[+] {target} ({ip}) accepts DoH queries via POST at {doh_url}")
 				return True
