@@ -20,7 +20,7 @@ def check_doh(target):
 		return
 
 	headers = {'Content-Type': 'application/dns-message', 'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"}
-	paths = ['/dns-query', '/doh', '/dns', '/resolve']
+	paths = ['/dns-query', '/query', '/dns', '/resolve', '/name']
 
 	for path in paths:
 		base_url = f"https://{ip}"
